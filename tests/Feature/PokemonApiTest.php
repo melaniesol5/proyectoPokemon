@@ -13,7 +13,7 @@ class PokemonApiTest extends TestCase
      *
      * @return test
      */
-    public function testExample()
+    public function carga_buscador()
     {
         $response = $this->get('/');
 
@@ -33,6 +33,6 @@ class PokemonApiTest extends TestCase
         $response->assertSee('charizard');
         
     }
-   
+
 
 }
