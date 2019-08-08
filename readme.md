@@ -12,9 +12,9 @@
 ## Running proyect:
 -	Install PHP 7.1:
 ```bash
-	sudo apt-get install python-software-properties -y && sudo add-apt-repository ppa:ondrej/php-7.1
-	sudo apt-get update
-	sudo apt-get install php7.1
+sudo apt-get install python-software-properties -y && sudo add-apt-repository ppa:ondrej/php-7.1
+sudo apt-get update
+sudo apt-get install php7.1
 ```
 -	Install Laravel:
 ```bash
