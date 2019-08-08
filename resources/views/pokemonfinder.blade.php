@@ -6,15 +6,15 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v3.8.5">
+    
     <title>Pokemon Finder</title>
+   
     <link href="https://fonts.googleapis.com/css?family=Ultra&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Freckle+Face&display=swap" rel="stylesheet">
     <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/sticky-footer-navbar/">
 
     <!-- Bootstrap core CSS -->
 <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"  rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-
     <style>
       .bd-placeholder-img {
         font-size: 1.125rem;
@@ -36,12 +36,14 @@
   </head>
 <body class="d-flex flex-column h-100">
 
-<!-- Begin page content -->
+
+
+
 <main role="main" class="flex-shrink-0">
-  <div class="container ">
+  <div class="container">
     <h1 class="col-md-12 mt-5 mb-5 text-center" style="font-family: 'Freckle Face', cursive; font-size: 110px;">Pokemon Finder</h1>
     
-    <div  id="Busqueda" class="form-row">
+    <div  id="Busqueda" class="row ">
     <p class="col-md-6 text-center">El que quiere Pokemon que los busque.</p>
     <form class="form-inline col-md-6 text-center" action="/search" method="get">
         <input class="form-control col-md-6" type="text" placeholder="Ingrese el nombre a buscar" name="param">
@@ -52,7 +54,7 @@
   @if (count($listOfPokemons)>0)
     <h3 class="lead mt-5 text-success">Resultados de la búsqueda: <h3>
     @else
-    <h2 class="mt-5 text-danger"> No hay resultados para la búsqueda: {{$param}}</h2>	
+    <h2 class="mt-5 text-danger"> No hay resultados para la búsqueda: {{$busqueda}}</h2>	
    @endif
    <div>
    	 
@@ -74,12 +76,20 @@
   </div>
 </main>
 
-<footer class="footer mt-auto py-3">
-  <div class="d-inline col-md-6">
-    
-    <span class=" text-muted text-center">Hecho por Melanie .</span>
 
-  </div>
+
+
+<footer class="container mt-auto" style="bottom: 20px; ">
+		<div class="row">
+			<div class="col-md-12 col-md-offset-2">
+				<div >
+					<div class="card-body d-flex justify-content-between align-items-center" style="font-size: 18px;">
+						Hecho por Melanie.
+						<a href="https://github.com/melaniesol5/proyectoPokemon" target="_blanck" class="btn btn-warning btn-lg bg-warning rounded text-right"> Link Repo</a>
+					</div>
+				</div>
+			</div>
+		</div>
 </footer>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

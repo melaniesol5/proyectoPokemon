@@ -16,13 +16,15 @@ class PokemonController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index(Request $request){
+    	
     	$url='https://pokeapi.co/api/v2/';
-        $param = $request->param; //parametro de la busqueda
-        $params='pokemon?offset=0&limit=40';
+        $busqueda = $request->param; //parametro de la busqueda
+        if ($busqueda){
+        $params='pokemon';
         $resultados=$this->searchAPI($url,$params)->results;
-        $resultadosFiltrados=collect([]); 
+                $resultadosFiltrados=collect([]); 
         foreach ($resultados as $key=>$result) {  
-            if(stristr($result->name, $param)){
+            if(stristr($result->name, $busqueda)){
                $resultadosFiltrados->push($result->url); 
             }
         }
@@ -32,12 +34,14 @@ class PokemonController extends Controller
         $listOfPokemons->push([
         	'nombre'=>$pokemonEncontrado->name,
         	'imagen_front'=>$pokemonEncontrado->sprites->front_default,
-        	'imagen_back'=>$pokemonEncontrado->sprites->back_default,
         	'tipo'=>$pokemonEncontrado->types]);
         }
-        return view('pokemonfinder', compact('listOfPokemons', 'param'));    
+        return view('pokemonfinder', compact('listOfPokemons', 'busqueda'));  
+        } 
+        $busqueda= null;
+        return view('pokemonfinder', compact('busqueda') );
     }
-
+  
     /**
      * Display a listing of the resource.
      *
